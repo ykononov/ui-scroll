@@ -76,24 +76,15 @@
 
 .info-if-frame-wrap {
 	position: fixed;
-	//right: 5px;
 	top: 5px;
 	left: 0;
 	right: 0;
-
-	//background: red;
-
-	.container {
-
-		//padding: 0;
-	}
-
 }
 
 
 .info-if-frame {
 	float: right;
-	  position: relative;
+	position: relative;
 	z-index: 100;
 	margin-right: 10px;
 	background: #fff;
@@ -110,6 +101,17 @@
 
 /*!info*/
 
+.actions {
+	margin: .5em 0;
+	border-radius: 5px;
+	padding: 10px;
+	border: 1px hsl(0,0%,95%) solid;
+
+	label {
+		font-weight: normal;
+	}
+}
+
 
 
 
@@ -119,7 +121,7 @@
 .item() {
 	padding: 3px 5px;
 
-	&.even {
+	&:nth-child(odd) {
 		background-color: hsl(0,0%,90%);
 	}
 }
@@ -157,7 +159,7 @@
 
 
 		@media screen and (min-height: 500px) {
-			height: calc(~"100vh - 200px");
+			height: calc(~"100vh - 215px");
 
 			/*custom*/
 			&#id-windowviewport {
@@ -179,7 +181,7 @@
 	overflow: auto;
 
 	@media screen and (min-height: 500px) {
-		max-height: calc(~"100vh - 200px");
+		max-height: calc(~"100vh - 215px");
 
 		/*custom*/
 		&#id-windowviewport {

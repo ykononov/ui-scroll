@@ -3,27 +3,30 @@
 <head>
 	<meta charset="utf-8">
 	<title>Scroller Demo (list based)</title>
-	<script src="http://coffeescript.org/extras/coffee-script.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
-	<script src="../../src/ui-scroll.coffee" type="text/coffeescript"></script>
-	<script src="../../src/ui-scroll-jqlite.coffee" type="text/coffeescript"></script>
-	<script src="persistentScroll.coffee" type="text/coffeescript"></script>
-	<style>
-		.viewport{
-			height:400px;
-		}
-	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+	<script src="../../dist/ui-scroll.js"></script>
+	<script src="../../dist/ui-scroll-jqlite.js"></script>
+	<script src="persistentScroll.js"></script>
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+
 </head>
-<body>
-<h2 style="position: fixed; left: 200px; top: 0;">
-	is loading: {{loading}}; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="../index.html"> browse sample code</a>
-	<br/>
-	top visible: {{topVisible.$index}}
-</h2>
-<div ui-scroll-viewport class="viewport">
-	<ul>
-		<li ui-scroll="item in datasource"  is-loading="loading" top-visible-scope="topVisible">{{$index}}: {{item}}</li>
-	</ul>
+<body ng-app="application">
+
+
+<div class="cont cont-global">
+	<a class="back" href="../index.html">browse other examples</a>
+	<h1 class="page-header page-header-exapmle">Preserves the scroll position on refresh</h1>
+
+	<div class="info">
+		<div class="info-item"><span class="info-item-label">is loading:</span> {{loading}}</div>
+		<div class="info-item"><span class="info-item-label">top visible:</span> {{topVisible.$index}}</div>
+	</div>
+	<!--<div class="actions"></div>-->
+	<div class="viewport" ui-scroll-viewport>
+			<div class="item" ui-scroll="item in datasource"  is-loading="loading" top-visible-scope="topVisible">{{$index}}: {{item}}</div>
+	</div>
+
 </div>
+
 </body>
 </html>
