@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="application">
+<head>
+	<meta charset="utf-8">
+	<title>Scroller Demo (cache option) </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+	<script src="../../dist/ui-scroll.js"></script>
+	<script src="../../dist/ui-scroll-jqlite.js"></script>
+	<script src="cache.js"></script>
+	<link rel="stylesheet" href="../css/style.css" type="text/css"/>
+
+
+
+</head>
+<body ng-controller="mainController"  ng-app="application">
+
+<div class="cont cont-global">
+	<a class="back" href="../index.html">browse other examples</a>
+	<h1 class="page-header page-header-exapmle">Cache within datasource implementation</h1>
+	<div class="description">
+		<p>
+			All you need to start working with this cache is
+			<em>datasource.cache.initialize()</em>
+			in your datasource controller/service code.
+		</p>
+
+		<p>
+			Base data retrieving method <em>datasource.get()</em> has not to be changed.
+			We don't touch its implementation. Nothing changes.
+		</p>
+
+		<p>
+			You may disable/enable cache via <em>datasource.cache.isEnabled</em> property.
+			Toggle-link demonstrates this ability.
+		</p>
+	</div>
+
+	<div class="actions">
+		Cache is {{datasource.cache.isEnabled ? 'enabled' : 'disabled'}}
+		<a class="toggler" ng-click="datasource.cache.toggle()">[toggle]</a>
+	</div>
+
+	<div class="viewport" id="viewport-cache" ui-scroll-viewport>
+		<div class="item" ui-scroll="item in datasource" buffer-size='5'>*{{item.content}}*</div>
+	</div>
+
+
+</div>
+
+</body>
+</html>

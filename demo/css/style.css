@@ -53,6 +53,9 @@
   border-left: 5px #e6e6e6 solid;
   padding-left: 15px;
 }
+.description ul {
+  padding-left: 20px;
+}
 /*info*/
 .info,
 .info-if-frame {
@@ -131,6 +134,24 @@
 }
 /*!iframe*/
 /*viewport*/
+.viewport-group {
+  border: 1px #b3b3b3 solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 30px 0;
+}
+.viewport-group .viewport-group-tilte {
+  float: left;
+  margin: -1.2em 0 0 6px;
+  font-weight: bold;
+  font-size: 15px;
+  background: #fff;
+  padding: 0 8px;
+}
+.viewport-group .actions {
+  border: none;
+  padding: 0;
+}
 .viewport-wrap {
   margin-top: 15px;
 }
@@ -191,6 +212,12 @@
   .viewport:not(.viewport-height-fixed)#viewport-listScroller {
     height: calc(100vh - 280px);
   }
+  .viewport:not(.viewport-height-fixed)#viewport-windowviewportInline {
+    height: calc(100vh - 230px);
+  }
+  .viewport:not(.viewport-height-fixed)#viewport-cache {
+    height: calc(100vh - 300px);
+  }
 }
 .viewport#viewport-multipleList-2 .item {
   background-color: transparent;
@@ -207,11 +234,74 @@
   width: 1%;
   text-align: center;
 }
+.viewport#viewport-windowviewportInline .item-inline {
+  display: inline-block;
+}
+.viewport#viewport-windowviewportInline .item-inline .item-inline-inn {
+  display: inline-block;
+}
 .viewport#viewport-listScroller ul {
   padding-left: 20px;
 }
 .viewport#viewport-listScroller ul li {
   margin: 7px 0;
+}
+.viewport#viewport-animation {
+  height: auto;
+  max-height: 300px;
+}
+.viewport#viewport-animation .item.ng-leave,
+.viewport#viewport-animation .item.ng-enter {
+  -webkit-transition: 0.75s linear all;
+  transition: 0.75s linear all;
+}
+.viewport#viewport-animation .item.ng-enter {
+  opacity: 0;
+  color: yellow;
+  height: 0;
+}
+.viewport#viewport-animation .item.ng-enter.ng-enter-active {
+  opacity: 1;
+  color: black;
+  height: 18px;
+}
+.viewport#viewport-animation .item.ng-leave {
+  opacity: 1;
+  color: black;
+  height: 18px;
+}
+.viewport#viewport-animation .item.ng-leave.ng-leave-active {
+  opacity: 0;
+  color: red;
+  height: 0;
+}
+#viewport-scrollBubblingPrevent-wrap {
+  background-color: rgba(255, 249, 0, 0.28);
+  padding: 300px 0;
+  position: relative;
+}
+#viewport-scrollBubblingPrevent-wrap:before,
+#viewport-scrollBubblingPrevent-wrap:after {
+  content: "padding";
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  opacity: .2;
+  vertical-align: middle;
+  line-height: 1;
+}
+#viewport-scrollBubblingPrevent-wrap:before {
+  top: 120px;
+}
+#viewport-scrollBubblingPrevent-wrap:after {
+  bottom: 120px;
+}
+.toggler {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .viewport-in-frame .item {
   padding: 3px 5px;

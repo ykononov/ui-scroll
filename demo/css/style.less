@@ -66,6 +66,10 @@
 	margin: 15px 0;
 	border-left: 5px hsl(0,0%,90%) solid;
 	padding-left: 15px;
+
+	ul {
+		padding-left: 20px;
+	}
 }
 
 
@@ -182,6 +186,33 @@
 /*!iframe*/
 
 /*viewport*/
+.viewport-group {
+	border: 1px hsl(0,0%,70%) solid;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 30px 0;
+
+
+	.viewport-group-tilte {
+	float: left;
+		margin: -1.2em 0 0 6px;
+		font-weight: bold;
+		font-size: 15px;
+		background: #fff;
+		padding: 0 8px;
+	}
+
+	.actions {
+		border: none;
+		padding: 0;
+	}
+}
+
+
+
+
+
+
 .viewport-wrap {
 	margin-top: 15px;
 	
@@ -249,6 +280,14 @@
 			&#viewport-listScroller {
 				height: calc(~"100vh - 280px");
 			}
+
+		  &#viewport-windowviewportInline {
+			  height: calc(~"100vh - 230px");
+		  }
+
+		  &#viewport-cache {
+			  height: calc(~"100vh - 300px");
+		  }
 			/*!custom*/
 
 		}
@@ -284,6 +323,18 @@
 
 	}
 
+	&#viewport-windowviewportInline {
+		.item-inline {
+			display: inline-block;
+
+			.item-inline-inn {
+				display: inline-block;
+			}
+		}
+	}
+
+
+
 	&#viewport-listScroller {
 		ul {
 			padding-left: 20px;
@@ -293,11 +344,65 @@
 			}
 		}
 	}
+
+	&#viewport-animation {
+		height: auto;
+		max-height: 300px;
+
+		.item.ng-leave, .item.ng-enter {
+			-webkit-transition: 0.75s linear all;
+			transition: 0.75s linear all;
+		}
+
+		.item.ng-enter { opacity: 0; color: yellow; height: 0; }
+		.item.ng-enter.ng-enter-active { opacity: 1; color: black;  height: 18px; }
+
+		.item.ng-leave { opacity: 1; color: black; height: 18px; }
+		.item.ng-leave.ng-leave-active { opacity: 0; color: red; height: 0; }
+	}
 	/*!custom*/
 
 
 
 }
+
+
+#viewport-scrollBubblingPrevent-wrap {
+	background-color: rgba(255, 249, 0, 0.28);
+	padding: 300px 0;
+	position: relative;
+
+	&:before,
+	&:after {
+		content: "padding";
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		font-size: 50px;
+		opacity: .2;
+		vertical-align: middle;
+		line-height: 1;
+	}
+
+	&:before {
+		top: 120px;
+	}
+
+	&:after {
+		bottom: 120px;
+	}
+}
+
+.toggler {
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+
+
+
 
 .viewport-in-frame {
 
