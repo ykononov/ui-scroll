@@ -1,19 +1,19 @@
 angular.module('application', ['ui.scroll', 'ui.scroll.jqlite'])
-	.factory( 'datasource',
-		[ '$log', '$timeout'
+	.factory('datasource', ['$log', '$timeout',
+		function (console, $timeout) {
 
-			(console, $timeout)->
+			var get = function (index, count, success) {
+				$timeout(function () {
+					var result = [];
+					for (var i = index; i <= index + count - 1; i++) {
+						result.push("item #" + i);
+					}
+					success(result);
+				}, 100);
+			};
 
-				get = (index, count, success)->
-					$timeout(
-						->
-							result = []
-							for i in [index..index + count-1]
-								result.push "item ##{i}"
-							success(result)
-						100
-					)
-
-				{get}
-
-		]);
+			return {
+				get: get
+			};
+		}
+	]);
