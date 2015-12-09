@@ -233,7 +233,7 @@
 	&:not(.viewport-height-fixed) {
 
 		@media screen and (min-height: 500px) {
-			max-height: calc(~"100vh - 215px");
+			max-height: calc(~"100vh - 200px");
 
 			/*custom*/
 			&#persistentScroll {
@@ -242,6 +242,10 @@
 
 			&#viewport-positionedList {
 				max-height: calc(~"100vh - 270px");
+			}
+
+			&#viewport-listScroller {
+				max-height: calc(~"100vh - 280px");
 			}
 			/*!custom*/
 
@@ -276,6 +280,16 @@
 			}
 		}
 
+	}
+
+	&#viewport-listScroller {
+		ul {
+			padding-left: 20px;
+
+			li {
+				margin: 7px 0;
+			}
+		}
 	}
 	/*!custom*/
 
