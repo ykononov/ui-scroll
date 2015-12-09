@@ -17,3 +17,5 @@ angular.module('application', ['ui.scroll', 'ui.scroll.jqlite'])
 			};
 		}
 	]);
+
+angular.bootstrap(document, ["application"])
