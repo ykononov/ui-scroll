@@ -1,12 +1,12 @@
 angular.module('application', ['ui.scroll', 'ui.scroll.jqlite'])
-	.factory('datasource', ['$log', '$timeout', '$rootScope', '$location',
-		function (console, $timeout, $rootScope, $location) {
+	.factory('datasource', ['$log', '$timeout', '$rootScope',
+		function (console, $timeout, $rootScope) {
 
 			$rootScope.key = "";
 			var position = 0;
 			var data = [];
-			var ref1 = 'abcdefghijk';
-			var ref2 = 'abcdefghijk';
+			var ref1 = 'abcdefghijklmnopqrstuvwxyz';
+			var ref2 = 'abcdefghijklmnopqrstuvwxyz';
 
 			for (var j = 0; j < ref1.length; j++)
 				for (var k = 0, letter1 = ref1[j]; k < ref2.length; k++)

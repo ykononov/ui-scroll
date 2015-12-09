@@ -15,19 +15,23 @@
 	<a class="back" href="../index.html">browse other examples</a>
 	<h1 class="page-header page-header-exapmle">Positions the list based on element data</h1>
 
-	<div class="info">
-		<div class="info-item"><span class="info-item-label">is loading:</span> {{loading}}</div>
+	<div class="description">
+		This sample demonstrates a functionality of list positioning based on element data.
+		There is no persistence, just enter key value in textinput (from 'aa' to 'zz') and get key-offset positioning.
 	</div>
+
 	<div class="actions">
 		<form class="form-inline">
 			<div class="form-group">
-				<label>enter key value:</label>
-				<input class="form-control" type="text" ng-model="key">
+				<input class="form-control" type="text" ng-model="key" placeholder="Enter key value">
 			</div>
 		</form>
 	</div>
+	<div class="info">
+		<div class="info-item"><span class="info-item-label">is loading:</span> {{loading}}</div>
+	</div>
 	<div class="viewport" id="viewport-positionedList" ui-scroll-viewport>
-		<div class="item" ui-scroll="item in datasource" >{{$index}}: {{item}}</div>
+		<div class="item" ui-scroll="item in datasource" is-loading="loading">{{$index}}: {{item}}</div>
 	</div>
 
 </div>
