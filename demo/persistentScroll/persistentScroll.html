@@ -17,6 +17,14 @@
 	<a class="back" href="../index.html">browse other examples</a>
 	<h1 class="page-header page-header-exapmle">Preserves the scroll position on refresh</h1>
 
+	<description>
+		This sample demonstrates a functionality of top item position persistence.
+		This persistence is based on topVisible element's index (offset) which is stored in URL ($location).
+		So when you do some scrolls you see that 'offset' param is persisted via URL hash.
+		Then you refresh the page and after that the $index value (and leftmost column in the example) changes,
+		but the item which used to be on top stays on top.
+	</description>
+
 	<div class="info">
 		<div class="info-item"><span class="info-item-label">is loading:</span> {{loading}}</div>
 		<div class="info-item"><span class="info-item-label">top visible:</span> {{topVisible.$index}}</div>
