@@ -20,18 +20,6 @@
 	margin: 0 auto;
 }
 
-.page-header {
-	margin-top: .1em;
-
-	&.page-header-exapmle {
-		margin-top: .2em;
-	}
-}
-
-.back:before {
-	content: "<< ";
-}
-
 .example-list {
 	padding: 0 0 0 15px;
 
@@ -61,6 +49,23 @@
 	padding: 10px 0;
 }
 
+.back:before {
+	content: "<< ";
+}
+
+.page-header {
+	margin-top: .1em;
+
+	&.page-header-exapmle {
+		margin-top: .2em;
+		margin-bottom: .2em;
+	}
+}
+
+.description {
+	margin: 15px 0;
+}
+
 
 /*info*/
 .info, .info-if-frame {
@@ -69,9 +74,11 @@
 	font-family: monospace, monospace;
 }
 
+
+
 .info {
 	background: hsl(0,0%,95%);
-	margin: .2em 0;
+	margin: 10px 0;
 }
 
 .info-if-frame-wrap {
@@ -102,7 +109,7 @@
 /*!info*/
 
 .actions {
-	margin: .5em 0;
+	margin: 10px 0;
 	border-radius: 5px;
 	padding: 10px;
 	border: 1px hsl(0,0%,95%) solid;
@@ -111,12 +118,6 @@
 		font-weight: normal;
 	}
 }
-
-
-
-
-
-
 
 .item() {
 	padding: 3px 5px;
@@ -235,6 +236,10 @@
 			max-height: calc(~"100vh - 215px");
 
 			/*custom*/
+			&#persistentScroll {
+				max-height: calc(~"100vh - 300px");
+			}
+
 			&#viewport-positionedList {
 				max-height: calc(~"100vh - 270px");
 			}
