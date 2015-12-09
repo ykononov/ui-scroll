@@ -7,14 +7,11 @@
 	<script src="../../dist/ui-scroll.js"></script>
 	<script src="../../dist/ui-scroll-jqlite.js"></script>
     <script src="tableScroller.js"></script>
-    <style>
-        .viewport{
-            height:400px;
-        }
-    </style>
+	<link rel="stylesheet" href="../css/style.css" type="text/css"/>
+
 </head>
-<body>
-<h2 style="position: fixed; left: 150px; top: 0;">is loading: {{loading}}; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="../index.html"> browse sample code</a></h2>
+<body ng-app="application">
+<!--<h2 style="position: fixed; left: 150px; top: 0;">is loading: {{loading}}; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="../index.html"> browse sample code</a></h2>
 <table>
     <tbody style="height:300px" ui-scroll-viewport>
         <tr ui-scroll="item in datasource" is-loading="loading">
@@ -26,7 +23,34 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table>-->
+
+
+
+<div class="cont cont-global">
+	<a class="back" href="../index.html">browse other examples</a>
+	<h1 class="page-header page-header-exapmle">Table based scrollable list</h1>
+
+	<div class="info">
+		<div class="info-item"><span class="info-item-label">is loading:</span> {{loading}}</div>
+	</div>
+
+	<div class="viewport" id="viewport-tableScroller" ui-scroll-viewport>
+		<table>
+			<tbody>
+			<tr ui-scroll="item in datasource" is-loading="loading">
+				<td>
+					{{$index}}
+				</td>
+				<td>
+					{{item}}
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
 
 </body>
 </html>
