@@ -182,7 +182,7 @@
     /*custom*/
     /*!custom*/
   }
-  .viewport:not(.viewport-height-fixed)#persistentScroll {
+  .viewport:not(.viewport-height-fixed)#viewport-persistentScroll {
     height: calc(100vh - 300px);
   }
   .viewport:not(.viewport-height-fixed)#viewport-positionedList {
