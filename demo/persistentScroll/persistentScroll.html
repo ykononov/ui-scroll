@@ -22,7 +22,7 @@
 		<div class="info-item"><span class="info-item-label">top visible:</span> {{topVisible.$index}}</div>
 	</div>
 	<!--<div class="actions"></div>-->
-	<div class="viewport" ui-scroll-viewport>
+	<div class="viewport" id="persistentScroll" ui-scroll-viewport>
 			<div class="item" ui-scroll="item in datasource"  is-loading="loading" top-visible-scope="topVisible">{{$index}}: {{item}}</div>
 	</div>
 
