@@ -147,7 +147,7 @@
 }
 .viewport {
   margin-top: 15px;
-  max-height: 300px;
+  height: 300px;
   overflow: auto;
   /*custom*/
   /*!custom*/
@@ -178,18 +178,18 @@
 }
 @media screen and (min-height: 500px) {
   .viewport:not(.viewport-height-fixed) {
-    max-height: calc(100vh - 200px);
+    height: calc(100vh - 200px);
     /*custom*/
     /*!custom*/
   }
   .viewport:not(.viewport-height-fixed)#persistentScroll {
-    max-height: calc(100vh - 300px);
+    height: calc(100vh - 300px);
   }
   .viewport:not(.viewport-height-fixed)#viewport-positionedList {
-    max-height: calc(100vh - 320px);
+    height: calc(100vh - 320px);
   }
   .viewport:not(.viewport-height-fixed)#viewport-listScroller {
-    max-height: calc(100vh - 280px);
+    height: calc(100vh - 280px);
   }
 }
 .viewport#viewport-multipleList-2 .item {
