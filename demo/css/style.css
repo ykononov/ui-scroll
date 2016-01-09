@@ -56,6 +56,9 @@
 .description ul {
   padding-left: 20px;
 }
+.code {
+  margin-top: 10px;
+}
 /*info*/
 .info,
 .info-if-frame {

@@ -8,34 +8,37 @@
 	<script src="../../dist/ui-scroll-jqlite.js"></script>
 	<script src="tableScroller.js"></script>
 	<link rel="stylesheet" href="../css/style.css" type="text/css"/>
-
 </head>
 <body ng-app="application">
 
-<div class="cont cont-global">
-	<a class="back" href="../index.html">browse other examples</a>
-	<h1 class="page-header page-header-exapmle">Table based scrollable list</h1>
+	<div class="cont cont-global">
 
-	<div class="info">
-		<div class="info-item"><span class="info-item-label">is loading:</span> {{loading}}</div>
+		<a class="back" href="../index.html">browse other examples</a>
+
+		<h1 class="page-header page-header-exapmle">Table based scrollable list</h1>
+
+		<div class="description">
+			Since html container with ui-scroll attribute is repeatable there are some ways to build a template.
+			This sample demonstrates table based (&lt;tr&gt;) template usage.
+			And it needed to be said that we have special logic within ui-scroll sources to support table markup.
+		</div>
+
+		<div class="viewport" id="viewport-tableScroller" ui-scroll-viewport>
+			<table>
+				<tbody>
+				<tr ui-scroll="item in datasource">
+					<td>
+						{{$index}}
+					</td>
+					<td>
+						{{item}}
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+
 	</div>
-
-	<div class="viewport" id="viewport-tableScroller" ui-scroll-viewport>
-		<table>
-			<tbody>
-			<tr ui-scroll="item in datasource" is-loading="loading">
-				<td>
-					{{$index}}
-				</td>
-				<td>
-					{{item}}
-				</td>
-			</tr>
-			</tbody>
-		</table>
-	</div>
-
-</div>
 
 </body>
 </html>

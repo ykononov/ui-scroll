@@ -1,41 +1,34 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>li based scrollable list</title>
+	<meta charset="utf-8">
+	<title>li based scrollable list</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
 	<script src="../../dist/ui-scroll.js"></script>
 	<script src="../../dist/ui-scroll-jqlite.js"></script>
 	<script src="listScroller.js"></script>
 	<link rel="stylesheet" href="../css/style.css" type="text/css"/>
-
 </head>
 <body ng-app="application">
 
-    <div class="cont cont-global">
-	    <a class="back" href="../index.html">browse other examples</a>
-	    <h1 class="page-header page-header-exapmle">li based scrollable list</h1>
+	<div class="cont cont-global">
 
-	    <div class="info">
-		    <div class="info-item"><span class="info-item-label">is loading:</span> {{loading}}</div>
-		    <div class="info-item"><span class="info-item-label">top visible:</span> {{topItem}}</div>
-	    </div>
+		<a class="back" href="../index.html">browse other examples</a>
 
-	    <div class="actions">
-		    <div class="checkbox">
-			    <label>
-				    <input type="checkbox" ng-model="visible"> Visible {{visible}}
-			    </label>
-		    </div>
-	    </div>
+		<h1 class="page-header page-header-exapmle">li based scrollable list</h1>
 
-	    <div class="viewport" id="viewport-listScroller" ng-show="visible" ui-scroll-viewport>
-		    <ul>
-			    <li ui-scroll="item in datasource" is-loading="loading">*{{item}}*</li>
-		    </ul>
-	    </div>
+		<div class="description">
+			Since html container with ui-scroll attribute is repeatable there are some ways to build a template.
+			This sample demonstrates list based (&lt;li&gt;) template usage.
+		</div>
 
-    </div>
+		<div class="viewport" id="viewport-listScroller" ui-scroll-viewport>
+			<ul>
+				<li ui-scroll="item in datasource">*{{item}}*</li>
+			</ul>
+		</div>
+
+	</div>
 
 </body>
 </html>
